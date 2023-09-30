@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/basic")
 public class BasicController {
-    @GetMapping("/text-basic")
+    @GetMapping("text-basic")
     public String textBasic(Model model) {
         model.addAttribute("data", "Hello Spring!");
         return "basic/text-basic";
@@ -39,14 +40,12 @@ public class BasicController {
         map.put("userA", userA);
         map.put("userB", userB);
         model.addAttribute("user", userA);
-        model.addAttribute("userMao", map);
+        model.addAttribute("userMap", map);
         model.addAttribute("users", list);
         return "basic/variable";
     }
-
-
     @Data
-    static class User{
+    static class User {
         private String username;
         private int age;
 

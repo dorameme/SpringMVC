@@ -72,10 +72,19 @@ public class BasicController {
         model.addAttribute("param2","date2");
         return "basic/link";
     }
+
+    @GetMapping("/operation")
+    public String operation(Model model) {
+        model.addAttribute("nullData", null);
+        model.addAttribute("data", "Spring!");
+        return "basic/operation";
+    }
+
     @Data
     static class User {
         private String username;
         private int age;
+
 
         public User(String username, int age) {
             this.username = username;
